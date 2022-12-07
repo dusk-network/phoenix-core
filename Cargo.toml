@@ -7,6 +7,7 @@ repository = "https://github.com/dusk-network/phoenix-core"
 description = "Anonymity-preserving zero-knowledge proof-powered transaction model"
 license = "MPL-2.0"
 exclude = [".github/workflows/ci.yml", ".gitignore"]
+rust-version = "1.62"
 
 [dependencies]
 rand_core = { version = "0.6", default-features = false }
@@ -24,6 +25,8 @@ rand = "0.8"
 rkyv = { version = "0.7", default-features = false, features = ["size_32"] }
 
 [features]
+default = []    # "alloc" is suggested as default feature but would be breaking change
+alloc = []
 rkyv-impl = [
     "dusk-poseidon/rkyv-impl",
     "dusk-jubjub/rkyv-impl",
